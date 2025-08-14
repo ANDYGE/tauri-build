@@ -24,8 +24,8 @@ jobs:
           # - platform: "windows-latest"
           #   args: ""
           #   arch: "amd64"
-          - platform: "ubuntu-22.04"
-            args: "--target aarch64-unknown-linux-gnu"
+          - platform: "ubuntu-22.04-arm"
+            args: "" #"--target aarch64-unknown-linux-gnu"
             arch: "aarch64"
 
     runs-on: ${{ matrix.platform }}
@@ -95,3 +95,9 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: tauri-build-${{ matrix.arch }}
+          path: src-tauri/target/release/bundle/**
