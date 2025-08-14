@@ -43,7 +43,8 @@ jobs:
             libappindicator3-dev \
             librsvg2-dev \
             patchelf \
-            libclang-dev
+            libclang-dev \
+            xdg-utils
 
       # - name: Install dependencies (Ubuntu AMD64)
       #   if: matrix.platform == 'ubuntu-22.04' && matrix.args == ''
