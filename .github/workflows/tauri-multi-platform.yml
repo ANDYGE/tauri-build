@@ -18,9 +18,9 @@ jobs:
           # - platform: "macos-latest"
           #   args: "--target aarch64-apple-darwin"
           #   arch: "aarch64"
-          # - platform: "ubuntu-22.04"
-          #   args: ""
-          #   arch: "amd64"
+          - platform: "ubuntu-22.04"
+            args: ""
+            arch: "amd64"
           # - platform: "windows-latest"
           #   args: ""
           #   arch: "amd64"
@@ -107,9 +107,3 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: tauri-build-${{ matrix.arch }}
-          path: src-tauri/target/release/bundle/**

@@ -14,7 +14,7 @@ function App() {
 
   return (
     <main className="container">
-      <h1>Welcome to Tauri + React</h1>
+      <h1 onClick={() => { setGreetMsg(window.location.href); }}>Welcome to Tauri + React</h1>
 
       <div className="row">
         <a href="https://vite.dev" target="_blank">
